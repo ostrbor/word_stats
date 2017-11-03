@@ -9,6 +9,9 @@ class TestProcess(TestCase):
         self.lines = ['a b', 'b c c c']
 
     def test_count_words(self):
+        # mock 'open' function and it's return value (file-like object)
+        # mock file-like object to behave as context manager (__enter__ method returns file content)
+        # mock content of file-like object to behave as iterable (as it's used in for loop)
         mock_fd_content = MagicMock()
         mock_fd = MagicMock()
 

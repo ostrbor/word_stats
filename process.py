@@ -24,7 +24,8 @@ def count_words(filepath: str) -> Dict[str, int]:
     counter = Counter()
     with open(filepath) as fd:
         for line in fd:
-            c = Counter(line.split())
+            words_in_line = line.split()
+            c = Counter(words_in_line)
             counter.update(c)
     return counter
 
